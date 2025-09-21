@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="https://www.freeiconspng.com/uploads/calculator-icon-1.png">
-    <!-- font Awosome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="https://www.freeiconspng.com/uploads/calculator-icon-1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" />
 </head>
-
 <body>
-    <div class="calculator">
-        <div class="display" >
-            <input id="result" style="margin: 10px;" type="text" placeholder="" ><br><br>
-        </div>
-        <div class="buttons">
-            <button class="operator" type="button" onclick="allClear()">AC</button>
-            <button class="operator"  type="button" onclick="displayScreen('(')">(</button>
-              <button class="operator"  type="button" onclick="displayScreen(')')">)</button>
-            <button class="operator" type="button" onclick="displayScreen('%')" ><i class="fa-solid fa-percent"></i></button>
-            
-            <button type="button" onclick="displayScreen(7)">7</button>
-            <button type="button" onclick="displayScreen(8)">8</button>
-            <button type="button" onclick="displayScreen(9)">9</button>
-            <button class="operator" type="button" onclick="displayScreen('/')"><i class="fa-solid fa-divide"></i></button>
-            
-            <button type="button" onclick="displayScreen(4)">4</button>
-            <button type="button" onclick="displayScreen(5)">5</button>
-            <button type="button" onclick="displayScreen(6)">6</button>
-            <button class="operator" type="button" onclick="displayScreen('*')"><i class="fa-solid fa-xmark"></i></button>
-            
-            <button type="button" onclick="displayScreen(1)">1</button>
-            <button type="button" onclick="displayScreen(2)">2</button>
-            <button type="button" onclick="displayScreen(3)">3</button>
-            <button class="operator" type="button" onclick="displayScreen('+')"><i class="fa-solid fa-plus"></i></button>
-            
-            
-             <button class="operator" type="button" onclick="displayScreen('.')">.</button>
-             <button type="button" onclick="displayScreen(0)"><i class="fa-solid fa-0"></i></button>
-             <button class="operator" type="button" onclick="displayScreen('-')"><i class="fa-solid fa-minus"></i></button>
-            <button  class="operator" type="button" onclick="operation()"><i class="fa-solid fa-equals"></i></button>
-            <button class="operator" type="button" onclick="backSpace()"><i class="fa-solid fa-delete-left"></i></button>
-        </div>
+  <div class="calculator">
+    <div class="toggile-btn">
+      <i class="fa-solid fa-sun" id="light-mode-btn"></i>
+      <i class="fa-solid fa-moon" id="dark-mode-btn"></i>
     </div>
+    <div class="display">
+      <input id="result" style="margin: 10px;" type="text" placeholder="0 "><br>
+    </div>
+    <div class="calculator-header">
+      <button style="margin-left: 13px; background-color: rgb(9, 142, 162); border-radius: 30%;" id="toggle-scientific">Scientific Mode</button>
+    </div>
+    <div class="scientific">
+      <button class="scientific-btn" onclick="displayScreen('sin(')">Sin</button>
+<button class="scientific-btn" onclick="displayScreen('cos(')">Cos</button>
+<button class="scientific-btn" onclick="displayScreen('tan(')">Tan</button>
+<button class="scientific-btn" onclick="displayScreen('log(')">Log</button>
+<button class="scientific-btn" onclick="displayScreen('√(')">√</button>
+      <button class="scientific-btn" onclick="fact()">x!</button>
+      <button class="scientific-btn" onclick="pi()">&#120645;</button>
+      <button class="scientific-btn" onclick="log()">Log</button>
+    
+      <button class="scientific-btn" onclick="e()">e</button>
+<button class="scientific-btn pow-btn" onclick="displayScreen('^')">x<span class="power">y</span></button>
+     
+    </div>
+    <div class="buttons">
+      <button class="operator" type="button" onclick="allClear()">AC</button>
+      <button class="operator" type="button" onclick="displayScreen('(')">(</button>
+      <button class="operator" type="button" onclick="displayScreen(')')">)</button>
+      <button class="operator" type="button" onclick="displayScreen('%')"><i class="fa-solid fa-percent"></i></button>
+      <button type="button" onclick="displayScreen(7)">7</button>
+      <button type="button" onclick="displayScreen(8)">8</button>
+      <button type="button" onclick="displayScreen(9)">9</button>
+      <button class="operator" type="button" onclick="displayScreen('/')"><i class="fa-solid fa-divide"></i></button>
+      <button type="button" onclick="displayScreen(4)">4</button>
+      <button type="button" onclick="displayScreen(5)">5</button>
+      <button type="button" onclick="displayScreen(6)">6</button>
+      <button class="operator" type="button" onclick="displayScreen('*')"><i class="fa-solid fa-xmark"></i></button>
+      <button type="button" onclick="displayScreen(1)">1</button>
+      <button type="button" onclick="displayScreen(2)">2</button>
+      <button type="button" onclick="displayScreen(3)">3</button>
+      <button class="operator" type="button" onclick="displayScreen('+')"><i class="fa-solid fa-plus"></i></button>
+      <button class="operator" type="button" onclick="displayScreen('.')">.</button>
+      <button type="button" onclick="displayScreen(0)"><i class="fa-solid fa-0"></i></button>
+      <button class="operator" type="button" onclick="displayScreen('-')"><i class="fa-solid fa-minus"></i></button>
+      <button class="operator" type="button" onclick="operation()"><i class="fa-solid fa-equals"></i></button>
+      <button class="operator" type="button" onclick="backSpace()"><i class="fa-solid fa-delete-left"></i></button>
+    </div>
+  </div>
+  <script src="./script.js"></script>
 </body>
-
 </html>

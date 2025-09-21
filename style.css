@@ -4,13 +4,14 @@ body {
             justify-content: center;
             align-items: center;
             height: 97vh;
-            background:linear-gradient(45deg,rgb(46, 45, 45),rgb(232, 224, 224))
+            /* background:linear-gradient(45deg,rgb(255, 255, 255),rgb(255, 255, 255)) */
+            background-image: url("https://files.123freevectors.com/wp-content/original/119446-abstract-light-blue-background-graphic-design.jpg");
         }
 .calculator
 {
   
     width: 400px;
-    height: 75%;
+    height: 85%;
     box-shadow: 0px 0px 5px  rgb(0, 0, 0);
     background-color: rgb(240, 234, 234);
     border-radius: 10px;
@@ -26,14 +27,14 @@ body {
     text-align: right;
     background-color: rgba(183, 179, 179, 0);
      box-shadow: 0px 0px 10px  rgb(100, 99, 99);
-    color: rgb(0, 0, 0);
+    color: rgb(95, 93, 93);
     
 }
 .buttons {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 2px;
-   margin-top: 10px;
+    gap: 3px;
+   margin-top: 20px;
     margin-right: 10px;
     margin-left: 10px;
    
@@ -44,12 +45,12 @@ body {
     font-size: medium;
     font-weight:bolder;
      background-color: rgba(127, 255, 212, 0);
-    box-shadow: 0px 0px 10px  rgb(100, 99, 99);
-    color: rgb(39, 39, 39);
+    box-shadow: 0px 0px 10px  rgb(137, 136, 136);
+    color: rgb(127, 124, 124);
 }
 .buttons .operator
 {
-    color: rgb(1, 126, 148);
+    color: rgb(3, 154, 180);
     background-color: rgba(127, 255, 212, 0);
     box-shadow: 0px 0px 10px  rgb(100, 99, 99);
 }
@@ -64,4 +65,82 @@ body {
     padding-top: 0;
   }
   
+}
+.toggile-btn{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: relative;
+    padding-top:10px;
+    right:10px;
+}
+.toggile-btn .fa-solid{
+    padding-inline: 10px;
+    cursor: pointer;
+}
+ #light-mode-btn{
+     color: rgb(94, 94, 94);
+}
+
+#dark-mode-btn{
+    color: rgb(151, 150, 150);
+    display: none;
+}
+.display{
+    margin-bottom: 0px;
+}
+
+
+.scientific .scientific-btn{
+    height: 34px;
+    width: 34px;
+    cursor: pointer;
+    margin-top: 8px;
+    text-align: center;
+    margin-bottom: 0;
+    color: #ffffff;
+    background-color: rgb(1, 108, 122);
+    border-radius: 5px;
+   
+}
+.scientific {
+    background: rgba(255, 255, 255, 0);
+    width: 94%;
+    align-items: center;
+    margin-left: 12px;
+    margin-top: 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    
+    transition: all 0.5s ease-in-out;
+}
+
+/* When active, expand */
+.scientific.active {
+    max-height: 200px; /* adjust depending on content height */
+    opacity: 1;
+}
+
+/* Rotate arrow when active */
+.back-btn i {
+    transition: transform 0.3s ease-in-out;
+}
+.scientific.active .back-btn i {
+    transform: rotate(180deg);
+}
+
+
+.pow-btn .power {
+   position: relative;
+   bottom: 0.7em;
+   right: 0.08em;
+   font-size: smaller;
+}
+
+.back-btn{
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    right: -65px;
+    margin-top: 5px;
 }
