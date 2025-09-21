@@ -54,24 +54,11 @@ body {
     background-color: rgba(127, 255, 212, 0);
     box-shadow: 0px 0px 10px  rgb(100, 99, 99);
 }
-@media screen and (max-width: 500px)
-    {
- .buttons button
-  {
-    padding: 13px;
-   
-  }
-  .buttons{
-    padding-top: 0;
-  }
-  .calculator{
-    height: 65%;
-  }
-  .scientific{
-    width: 98%;
-  }
-  
-}
+
+
+
+
+
 .toggile-btn{
     display: flex;
     align-items: center;
@@ -97,31 +84,39 @@ body {
 }
 
 
-.scientific .scientific-btn{
-    height: 34px;
-    width: 34px;
+.scientific .scientific-btn {
+    aspect-ratio: 1/1; /* keeps them square */
+    min-width: 40px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
-    margin-top: 8px;
     text-align: center;
-    margin-bottom: 0;
     color: #ffffff;
     background-color: rgb(1, 108, 122);
     border-radius: 5px;
-   
+    border: none;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
+
+/* Hover effect */
+.scientific .scientific-btn:hover {
+    background-color: rgb(0, 90, 102);
+}
+
+
 .scientific {
-    background: rgba(255, 255, 255, 0);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    gap: 6px;
     width: 94%;
-    align-items: center;
-    margin-left: 12px;
-    margin-top: 0;
+    margin: 8px auto 0 auto;
+    padding: 5px 0;
+    background: rgba(255, 255, 255, 0);
     overflow: hidden;
     max-height: 0;
     opacity: 0;
-    
     transition: all 0.5s ease-in-out;
 }
-
 /* When active, expand */
 .scientific.active {
     max-height: 200px; /* adjust depending on content height */
@@ -149,4 +144,31 @@ body {
     border-top-right-radius: 50%;
     right: -65px;
     margin-top: 5px;
+}
+@media screen and (max-width: 500px) {
+  .calculator {
+    width: 95%;
+    height: auto;
+  }
+
+  .display input {
+    font-size: 24px;
+    height: 50px;
+  }
+
+  .buttons button {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .scientific {
+    grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+    gap: 1px;
+  }
+
+  .scientific-btn {
+    min-width: 32px;
+    font-size: 10px;
+    
+  }
 }
