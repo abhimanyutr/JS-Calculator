@@ -65,7 +65,7 @@ lightBtn.addEventListener("click", () => {
 
 darkBtn.addEventListener("click", () => {
   document.body.style.backgroundImage = "url('https://files.123freevectors.com/wp-content/original/119446-abstract-light-blue-background-graphic-design.jpg')";
-  document.querySelector(".calculator").style.background = "rgb(240, 234, 234)";
+  document.querySelector(".calculator").style.background = "rgba(228, 223, 223, 1)";
   darkBtn.style.display = "none";
   lightBtn.style.display = "inline-block";
 });
@@ -86,7 +86,7 @@ let fact = () => {
   result.value = x;
 };
 
-let pi = () => result.value = Math.PI;
+let pi = () => result.value = Math.PI.toFixed(2);
 let log = () => result.value = Math.log(parseFloat(result.value));
 let root = () => result.value = Math.sqrt(parseFloat(result.value));
 let e = () => result.value = Math.E;
