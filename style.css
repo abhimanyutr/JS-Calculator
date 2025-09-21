@@ -59,10 +59,13 @@ body {
  .buttons button
   {
     padding: 13px;
-    
+   
   }
   .buttons{
     padding-top: 0;
+  }
+  .calculator{
+    height: 65%;
   }
   
 }
