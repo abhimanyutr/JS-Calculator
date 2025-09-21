@@ -67,6 +67,9 @@ body {
   .calculator{
     height: 65%;
   }
+  .scientific{
+    width: 98%;
+  }
   
 }
 .toggile-btn{
